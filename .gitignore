@@ -1,0 +1,20 @@
+# Fastq, SAM, BAM, BAI
+*.fastq
+*.fq
+*.fastq.gz
+*.sam
+*.bam
+*.bai
+
+# SLURM logs
+logs/
+*.out
+*.err
+
+# Databases and bulky intermediate outputs
+*.fasta
+*.fa
+*.tsv
+*.csv
+viral_database/
+*_out/
