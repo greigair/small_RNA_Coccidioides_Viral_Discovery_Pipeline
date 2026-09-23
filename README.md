@@ -16,12 +16,12 @@ Scripts are numbered in the order they are run. Each Bash script is written as a
 | Step | Script | Purpose |
 |---|---|---|
 | 1 | `1_downloading_sra.sh` | Downloads raw sRNA-seq FASTQ files from NCBI SRA (`prefetch` + `fasterq-dump`), renames per sample, compresses with `pigz`. |
-| 2 | `2_bowtie1_full_sample_alignment.sh` | Aligns each sample against the *C. posadasii* Silveira reference genome with Bowtie1 and exports unaligned (candidate non-host) reads via `--un`. |
+| 2 | `2_bowtie1_full_sample_alignment.sh` | Aligns each sample against a reference genome (In this project's case *C. posadasii* Silveira) with Bowtie1 and exports unaligned (candidate non-host) reads via `--un`. |
 | 3 | `3_velvet.sh` | De novo assembles the unaligned reads into contigs using Velvet (`velveth`/`velvetg`). |
-| 4 | `4_blastx.sh` | BLASTX search of assembled contigs against a local custom viral RefSeq/nr database (viral taxid 10239) to identify candidate viral protein hits. |
-| 5 | `5_bowtie1_contigs_alignment.sh` | Re-aligns raw sRNA reads from confirmed viral-hit samples against a composite *Akanthomyces* spp. Chrysovirus 1 reference genome, then converts/sorts/indexes to BAM for downstream coverage analysis and IGV visualisation. |
+| 4 | `4_blastx.sh` | BLASTX search of assembled contigs against a local custom viral RefSeq/nr (viral taxid 10239) or any other database of choice to identify candidate viral protein hits. |
+| 5 | `5_bowtie1_contigs_alignment.sh` | This script was used to re-align raw sRNA reads from confirmed viral-hit samples against a composite *Akanthomyces* spp. Chrysovirus 1 reference genome, then converted/sorted/indexed to BAM for downstream coverage analysis and IGV visualisation. This may be used similarly for another virus/organism |
 | 6 | `6_blastx_taxonomic_analysis.R` | Aggregates all per-sample BLASTX TSV outputs, queries NCBI (via `rentrez`/`taxize`) to resolve taxonomic order for each hit, and filters to mycovirus-associated orders to produce the high-priority contig shortlist. |
-| 7 | `7_sequence_count_figure_making.R` | Generates the stepwise data-yield figures (raw reads → unaligned reads → assembled contigs → viral contig hits) summarised by *Coccidioides* life stage. |
+| 7 | `7_sequence_count_figure_making.R` | Generates the stepwise data-yield figures (raw reads → unaligned reads → assembled contigs → viral contig hits) for each step major of the pipeline. This was used to summarise  for us by *Coccidioides* life stage. |
  
 ---
  
