@@ -51,3 +51,6 @@ An NCBI Entrez API key is recommended to avoid rate limiting when running `FullV
 - The two R scripts expect the Bash outputs (BLASTX TSVs, and a `read_counts.csv` summarising per-sample read/contig counts) to be organised under a `data/` directory — see the `TSV_DIR`/`INPUT_CSV` variables at the top of each script.
 ---
 
+## Acknowledgements
+
+This work is based off of a previous pipeline constructed by Stefano Declan Togatorop, a postgraduate student who worked on this project previously, who analysed general mRNA-seq Coccidioides data. His github is found here:  https://github.com/stogaclan
