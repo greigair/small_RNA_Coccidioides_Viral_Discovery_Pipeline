@@ -46,7 +46,7 @@ Scripts are numbered in the order they are run. Each Bash script is written as a
 ## Usage notes
  
 - All scripts are templates: paths, index/database locations, sample list filenames, and SLURM directives (partition, memory, walltime, email) are placeholders and need to be edited for your own environment before running.
-- Scripts expect a plain-text sample list (one sample name per line) and use `$SLURM_ARRAY_TASK_ID` to select the corresponding sample for each array task. (I.e., you could download 80 samples of small RNA-seq, and each of those 80 would require a line in the your_list.txt file with their identification so that they may be sampled accordingly from the corresponding your_data file.
+- Scripts expect a plain-text sample list (one sample name per line) and use `$SLURM_ARRAY_TASK_ID` to select the corresponding sample for each array task. (I.e., you could download 80 samples of small RNA-seq, and each of those 80 would require a line in the your_list.txt file with their identification so that they may be sampled accordingly from the corresponding your_data file).
 - The two R scripts expect the Bash outputs (BLASTX TSVs, and a `read_counts.csv` summarising per-sample read/contig counts) to be organised under a `data/` directory — see the `TSV_DIR`/`INPUT_CSV` variables at the top of each script.
 ---
 
