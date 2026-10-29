@@ -41,8 +41,7 @@ Scripts are numbered in the order they are run. Each Bash script is written as a
 - rentrez
 - pbapply
 - ggplot2
-- scales
-An NCBI Entrez API key is recommended to avoid rate limiting when running `FullViralDB_Cocci_Blastx_Analysis.R`.
+- An NCBI Entrez API key is recommended to avoid rate limiting when running `FullViralDB_Cocci_Blastx_Analysis.R`.
 
 ## Usage notes
  
